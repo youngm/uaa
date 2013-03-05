@@ -86,7 +86,7 @@ public class ScimGroupEndpoints {
 		}
 
 		if (!StringUtils.hasLength(attributesCommaSeparated)) {
-			return new SearchResults<ScimGroup>(Arrays.asList(ScimGroup.SCHEMAS), input, startIndex, count, input.size());
+			return new SearchResults<ScimGroup>(Arrays.asList(ScimGroup.SCHEMAS), UaaPagingUtils.subList(input, startIndex, count), startIndex, count, input.size());
 		}
 
 		String[] attributes = attributesCommaSeparated.split(",");
